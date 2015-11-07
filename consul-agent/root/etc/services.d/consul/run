@@ -3,14 +3,15 @@
 # Bind to the external (LAN) IP
 BIND="$(getent hosts $HOSTNAME | awk '{print $1}')"
 
-#ls /var/run/s6/container_environment
+ls /var/run/s6/container_environment
 
 # This could probably be more clever to find others via looking in the directory commented out above
 if [ -z "$CONSUL_MASTER_PORT" ]
 then
-    next="-bootstrap"
+    echo "Master not set!"
+    exit 1
 else
-    next="-join=$CONSUL_MASTER_8300_TCP_ADDR"
+    next="-join=$CONSUL_MASTER_PORT_8301_TCP_ADDR:$CONSUL_MASTER_PORT_8301_TCP_PORT"
 fi
 
 exec /usr/local/bin/consul agent -config-dir /etc/consul.d/bootstrap -bind $BIND $next -dc $DATACENTER;

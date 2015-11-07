@@ -10,3 +10,6 @@ cd consul-ui
 docker build -t boomtownroi/consul-ui .
 cd ..
 
+cd consul-agent
+docker build -t boomtownroi/consul-agent .
+cd ..
