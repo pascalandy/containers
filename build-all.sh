@@ -15,3 +15,5 @@ docker build -t boomtownroi/mysql-dev mysql-dev
 docker build -t boomtownroi/memcached memcached
 
 docker build -t boomtownroi/nodejs nodejs
+
+docker build -t boomtownroi/php5-fpm php5-fpm
