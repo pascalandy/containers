@@ -1,0 +1,9 @@
+{
+  "services": [
+    {
+      "name": "mysql",
+      "tags": ["ops"],
+      "port": 3306
+    }
+  ]
+}

@@ -3,6 +3,7 @@ FROM boomtownroi/base
 # Feel free to add yourself if you edit this file ;)
 MAINTAINER Robert Landers <rlanders@boomtownroi.com>
 
+ENV DEBIAN_FRONTEND noninteractive
 ENV CONSUL_VERSION 0.5.2
 ENV DATACENTER "DOCKER"
 

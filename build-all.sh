@@ -2,19 +2,12 @@
 
 # This is for building and testing in development
 
-cd base
-docker build -t boomtownroi/base .
-cd ..
+docker build -t boomtownroi/base base
 
-cd consul-ui
-docker build -t boomtownroi/consul-ui .
-cd ..
+docker build -t boomtownroi/consul-ui consul-ui
 
-cd consul-agent
-docker build -t boomtownroi/consul-agent .
-cd ..
+docker build -t boomtownroi/consul-agent consul-agent
 
-cd data-volume
-docker build -t boomtownroi/data-volume .
-cd ..
+docker build -t boomtownroi/data-volume data-volume
 
+docker build -t boomtownroi/mysql-dev mysql-dev
