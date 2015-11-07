@@ -1,4 +1,4 @@
-FROM boomtownroi/consul-agent
+FROM boomtownroi/base
 
 # Add your name if you find yourself here
 MAINTAINER Robert Landers <landers.robert@gmail.com>
