@@ -6,7 +6,7 @@ oldUserId=$(id -u www-data)
 oldGroupId=$(id -g www-data)
 
 usermod -u $userId www-data
-groupmod -g $groupId www-data
+#groupmod -g $groupId www-data
 #find / -user $oldUserId -exec chown -h $userId {} \;
 #find / -group $oldGroupId -exec chgrp -h $groupId {} \;
-usermod -g $groupId www-data
+#usermod -g $groupId www-data
