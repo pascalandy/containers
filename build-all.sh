@@ -13,3 +13,8 @@ cd ..
 cd consul-agent
 docker build -t boomtownroi/consul-agent .
 cd ..
+
+cd data-volume
+docker build -t boomtownroi/data-volume .
+cd ..
+
