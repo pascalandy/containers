@@ -6,12 +6,13 @@ BIND="$(getent hosts $HOSTNAME | awk '{print $1}')"
 ls /var/run/s6/container_environment
 
 # This could probably be more clever to find others via looking in the directory commented out above
-if [ -z "$CONSUL_MASTER_PORT" ]
-then
-    echo "Master not set!"
-    exit 1
-else
-    next="-join=$CONSUL_MASTER_PORT_8301_TCP_ADDR:$CONSUL_MASTER_PORT_8301_TCP_PORT"
-fi
+#if [ -z "$CONSUL_MASTER_PORT" ]
+#then
+#    echo "Master not set!"
+#    exit 1
+#else
+#    next="-join=$CONSUL_MASTER_PORT_8301_TCP_ADDR:$CONSUL_MASTER_PORT_8301_TCP_PORT"
+#fi
 
+next="-join=consul:8301"
 exec /usr/local/bin/consul agent -config-dir /etc/consul.d/bootstrap -bind $BIND $next -dc $DATACENTER;
