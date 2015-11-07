@@ -1,0 +1,13 @@
+#!/usr/bin/with-contenv bash
+
+# Bind to the external (LAN) IP
+BIND="$(getent hosts $HOSTNAME | awk '{print $1}')"
+
+if [ -z "$CONSUL_UI_PORT" ]
+then
+    next="-bootstrap"
+else
+    next="-join=$CONSUL_UI_8300_TCP_ADDR"
+fi
+
+exec /usr/local/bin/consul agent -config-dir /etc/consul.d/bootstrap -bind $BIND $next -dc $DATACENTER;
