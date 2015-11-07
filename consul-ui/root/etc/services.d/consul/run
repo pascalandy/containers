@@ -13,4 +13,4 @@ else
     next="-join=$CONSUL_MASTER_8300_TCP_ADDR"
 fi
 
-exec /usr/local/bin/consul agent -config-dir /etc/consul.d/bootstrap -bind $BIND $next -dc $DATACENTER;
+exec /usr/local/bin/consul agent -config-dir /etc/consul.d/bootstrap $next -dc $DATACENTER;

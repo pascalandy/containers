@@ -14,4 +14,4 @@ ls /var/run/s6/container_environment
 #    next="-join=$CONSUL_MASTER_PORT_8301_TCP_ADDR:$CONSUL_MASTER_PORT_8301_TCP_PORT"
 #fi
 
-exec /usr/local/bin/consul agent -config-dir /etc/consul.d/bootstrap -bind $BIND $next -dc $DATACENTER;
+exec /usr/local/bin/consul agent -config-dir /etc/consul.d/bootstrap $next -dc $DATACENTER;
