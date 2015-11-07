@@ -7,7 +7,7 @@ MAINTAINER Robert Landers <rlanders@boomtownroi.com>
 RUN add-apt-repository -y ppa:nginx/stable &2> /dev/null
 
 RUN apt-get update && \
-    apt-get install -y nginx && \
+    apt-get install -y nginx dnsmasq && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
     chown -R www-data:www-data /var/lib/nginx && \
