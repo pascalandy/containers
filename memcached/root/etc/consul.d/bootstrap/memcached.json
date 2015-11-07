@@ -1,0 +1,9 @@
+{
+  "services": [
+    {
+      "name": "memcached",
+      "tags": ["ops"],
+      "port": 11211
+    }
+  ]
+}

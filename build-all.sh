@@ -11,3 +11,5 @@ docker build -t boomtownroi/consul-agent consul-agent
 docker build -t boomtownroi/data-volume data-volume
 
 docker build -t boomtownroi/mysql-dev mysql-dev
+
+docker build -t boomtownroi/memcached memcached
