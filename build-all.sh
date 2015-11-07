@@ -20,4 +20,6 @@ docker build -t boomtownroi/php5-fpm php5-fpm
 
 docker build -t boomtownroi/nginx nginx
 
+docker build -t boomtownroi/git git
+
 echo "ALL DONE!"

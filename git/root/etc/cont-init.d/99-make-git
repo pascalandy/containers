@@ -1,0 +1,5 @@
+#!/usr/bin/with-contenv bash
+
+cp -fr /.ssh_host /.ssh
+chown -R root:root /.ssh
+chmod -R 400 /.ssh
