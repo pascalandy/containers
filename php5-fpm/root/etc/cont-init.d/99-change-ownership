@@ -1,0 +1,21 @@
+#!/usr/bin/with-contenv bash
+
+# Not doing this ...
+exit 0
+
+userId=$(stat -c '%u' /var/www/flagship-local/public_html/wp-content)
+groupId=$(stat -c '%g' /var/www/flagship-local/public_html/wp-content)
+oldUserId=$(id -u www-data)
+oldGroupId=$(id -g www-data)
+
+# Don't waste time if the container was built correctly
+if [ "$userId" == "$oldUserId" ]
+then
+    exit 0
+fi
+
+usermod -u $userId www-data
+groupmod -g $groupId www-data
+#find / -user $oldUserId -exec chown -h $userId {} \;
+#find / -group $oldGroupId -exec chgrp -h $groupId {} \;
+usermod -g $groupId www-data

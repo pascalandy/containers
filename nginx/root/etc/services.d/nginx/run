@@ -1,0 +1,5 @@
+#!/usr/bin/with-contenv bash
+
+ls -lah /usr/sbin
+
+exec /usr/sbin/nginx

@@ -17,3 +17,7 @@ docker build -t boomtownroi/memcached memcached
 docker build -t boomtownroi/nodejs nodejs
 
 docker build -t boomtownroi/php5-fpm php5-fpm
+
+docker build -t boomtownroi/nginx nginx
+
+echo "ALL DONE!"

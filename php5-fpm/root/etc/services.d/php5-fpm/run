@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/with-contenv bash
 
 if [ "$ALLOW_DEBUG" == "true" ]
 then
@@ -17,4 +17,7 @@ xdebug.max_nesting_level=300
 EDO
 fi
 
-exec php5-fpm -F
+mkdir -p /var/run/fpm
+
+echo "This is really it"
+exec /usr/sbin/php5-fpm -F
