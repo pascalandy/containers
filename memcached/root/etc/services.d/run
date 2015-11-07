@@ -1,0 +1,3 @@
+#!/usr/bin/with-contenv bash
+
+runuser -m --session-command="memcached" memcache

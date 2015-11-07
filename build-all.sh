@@ -13,3 +13,5 @@ docker build -t boomtownroi/data-volume data-volume
 docker build -t boomtownroi/mysql-dev mysql-dev
 
 docker build -t boomtownroi/memcached memcached
+
+docker build -t boomtownroi/nodejs nodejs
