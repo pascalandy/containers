@@ -1,7 +1,7 @@
 #!/usr/bin/with-contenv bash
 
-userId=$(stat -c '%u' /var/www/flagship-local/public_html/wp-content)
-groupId=$(stat -c '%g' /var/www/flagship-local/public_html/wp-content)
+userId=$(stat -c '%u' /var/www/flagship-local/public_html/index.php)
+groupId=$(stat -c '%g' /var/www/flagship-local/public_html/index.php)
 oldUserId=$(id -u www-data)
 oldGroupId=$(id -g www-data)
 
