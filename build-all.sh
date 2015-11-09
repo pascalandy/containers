@@ -22,4 +22,6 @@ docker build -t boomtownroi/nginx nginx
 
 docker build -t boomtownroi/git git
 
+docker build -t boomtownroi/build build
+
 echo "ALL DONE!"
