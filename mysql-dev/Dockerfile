@@ -5,7 +5,7 @@ MAINTAINER Robert Landers <rlanders@boomtownroi.com>
 
 # Install packages
 RUN apt-get update && \
-  apt-get -yq install mysql-server-5.5 pwgen && \
+  apt-get -yq install cron mysql-server-5.5 pwgen && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/*
 
