@@ -8,7 +8,7 @@ ENV NPM_VERSION 3.3.11
 
 # Setup Node.js (Setup NodeSource Official PPA)
 # https://github.com/nodesource/docker-node/blob/master/ubuntu/trusty/Dockerfile
-RUN buildDeps='curl lsb-release python-all git apt-transport-https' && \
+RUN buildDeps='curl lsb-release python-all git apt-transport-https build-essential' && \
     apt-get update && \
     apt-get install -y --force-yes $buildDeps && \
     curl -sL https://deb.nodesource.com/setup | bash - && \

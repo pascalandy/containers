@@ -22,7 +22,9 @@ RUN apt-get update && \
     python \
     rsync \
     ssh-client \
-    wget
+    wget && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 # Install node
 RUN curl -L http://git.io/n-install | N_PREFIX=/usr/local/n bash -s -- -y $NODE_VERSION
