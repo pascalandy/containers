@@ -51,8 +51,8 @@ RUN npm install -g \
     gulp \
     karma-cli@=0.1.1 \
     npm-cache \
-    phantomjs@1.9.18 \
-    && ln -s /usr/bin/nodejs /usr/bin/node \
-    && npm config set color false
+    phantomjs@1.9.18 && \
+    ln -s /usr/bin/nodejs /usr/bin/node && \
+    npm config set color false
 
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && chmod +x wp-cli.phar && mv wp-cli.phar /bin/wp

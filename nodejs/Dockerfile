@@ -20,6 +20,6 @@ ENV PATH "$PATH:/usr/local/n/bin"
 
 RUN npm_install=$NPM_VERSION curl -L https://www.npmjs.com/install.sh | sh
 
-RUN npm install -g forever
+RUN npm install -g forever \
     && ln -s /usr/bin/nodejs /usr/bin/node \
     && npm config set color false
