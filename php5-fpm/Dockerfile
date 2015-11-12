@@ -16,4 +16,6 @@ RUN apt-get update && apt-get install -y php5-fpm php5-mysql php-apc php5-curl p
 
 ADD root /
 
+RUN php5enmod opcache
+
 VOLUME /var/run/fpm/
