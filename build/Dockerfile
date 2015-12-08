@@ -50,7 +50,7 @@ RUN npm install -g \
     grunt-cli \
     gulp \
     karma-cli@0.1.1 \
-    npm-cache \
+    npm-cache@0.3.7 \
     phantomjs@1.9.18 && \
     ln -s /usr/bin/nodejs /usr/bin/node && \
     npm config set color false
