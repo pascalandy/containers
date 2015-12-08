@@ -5,7 +5,7 @@ MAINTAINER Robert Landers <rlanders@boomtownroi.com>
 
 ENV NODE_VERSION 5.0.0
 ENV HUB_VERSION 2.2.1
-ENV NPM_VERSION 3.3.11
+ENV NPM_VERSION 3.4.0
 ENV PHANTOMJS_BIN /usr/local/n/lib/node_modules/phantomjs/lib/phantom/bin/phantomjs
 
 RUN apt-get update && \
