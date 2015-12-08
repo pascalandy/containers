@@ -45,11 +45,11 @@ RUN cd / && \
 # Install node deps
 RUN npm_install=$NPM_VERSION curl -L https://www.npmjs.com/install.sh | sh
 RUN npm install -g \
-    bower \
+    bower@1.6.5 \
     coffee-script \
     grunt-cli \
     gulp \
-    karma-cli@=0.1.1 \
+    karma-cli@0.1.1 \
     npm-cache \
     phantomjs@1.9.18 && \
     ln -s /usr/bin/nodejs /usr/bin/node && \
