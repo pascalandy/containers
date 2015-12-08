@@ -43,7 +43,7 @@ RUN cd / && \
   rm -rf hub-linux-amd64-$HUB_VERSION
 
 # Install node deps
-RUN npm_install=$NPM_VERSION curl -L https://www.npmjs.com/install.sh | sh
+RUN npm_install=$NPM_VERSION curl -L https://www.npmjs.com/install.sh | npm_install=$NPM_VERSION sh
 RUN npm install -g \
     bower@1.6.5 \
     coffee-script \
