@@ -7,4 +7,6 @@ then
     crontab cron
     rm cron
     echo "BACKUP INITIALIZED"
+else
+    echo "BACKUP NOT INIT"
 fi
