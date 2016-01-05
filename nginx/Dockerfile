@@ -4,7 +4,9 @@ FROM boomtownroi/base
 MAINTAINER Robert Landers <rlanders@boomtownroi.com>
 
 # Install nginx and have it forward logs to Docker
-RUN add-apt-repository -y ppa:nginx/stable &2> /dev/null
+RUN deb http://nginx.org/packages/mainline/ubuntu/ trusty nginx && \
+    deb-src http://nginx.org/packages/mainline/ubuntu/ trusty nginx && \
+    wget -q -O- http://nginx.org/keys/nginx_signing.key | sudo apt-key add -
 
 RUN apt-get update && \
     apt-get install -y nginx dnsmasq && \
