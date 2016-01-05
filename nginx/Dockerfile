@@ -11,8 +11,8 @@ RUN apt-get update && \
     echo "deb http://nginx.org/packages/mainline/ubuntu/ trusty nginx" >> /etc/apt/sources.list.d/nginx.list && \
     echo "deb-src http://nginx.org/packages/mainline/ubuntu/ trusty nginx" >> /etc/apt/sources.list.d/nginx.list && \
     wget -q -O- http://nginx.org/keys/nginx_signing.key | apt-key add - && \
-    apt-get remove --purge wget && \
-    apt-get autoremove && \
+    apt-get remove --purge -y wget && \
+    apt-get autoremove -y && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
