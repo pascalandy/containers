@@ -4,8 +4,10 @@ FROM boomtownroi/base
 MAINTAINER Robert Landers <rlanders@boomtownroi.com>
 
 # Install nginx and have it forward logs to Docker
-RUN deb http://nginx.org/packages/mainline/ubuntu/ trusty nginx && \
-    deb-src http://nginx.org/packages/mainline/ubuntu/ trusty nginx && \
+RUN mkdir -p /etc/apt/sources.list.d && \
+    touch /etc/apt/sources.list.d/nginx.list && \
+    echo "deb http://nginx.org/packages/mainline/ubuntu/ trusty nginx" >> /etc/apt/sources.list.d/nginx.list && \
+    echo "deb-src http://nginx.org/packages/mainline/ubuntu/ trusty nginx" >> /etc/apt/sources.list.d/nginx.list && \
     wget -q -O- http://nginx.org/keys/nginx_signing.key | sudo apt-key add -
 
 RUN apt-get update && \
