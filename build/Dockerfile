@@ -17,6 +17,7 @@ RUN apt-get update && \
     dialog \
     gawk \
     jq \
+    imagemagick \
     libfontconfig \
     libssl-dev \
     mysql-client \
@@ -55,6 +56,7 @@ RUN npm install -g \
     grunt-cli \
     gulp \
     karma-cli@0.1.1 \
+    argus-eyes \
     npm-cache@0.3.7 \
     phantomjs@1.9.18 && \
     ln -s /usr/bin/nodejs /usr/bin/node && \
