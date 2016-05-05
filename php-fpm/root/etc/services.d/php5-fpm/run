@@ -3,7 +3,7 @@
 if [ "$ALLOW_DEBUG" == "true" ]
 then
  echo "Allowing for debug"
- cat << EDO >> /etc/php5/fpm/php.ini
+ cat << EDO >> /etc/php/7.0/fpm/php.ini
 [xdebug]
 zend_extension="/usr/lib/php5/20121212/xdebug.so"
 xdebug.remote_enable=1
