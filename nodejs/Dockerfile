@@ -1,4 +1,4 @@
-FROM boomtownroi/base
+FROM boomtownroi/base:16.04
 
 # Add your name if you find yourself here
 MAINTAINER Robert Landers <landers.robert@gmail.com>

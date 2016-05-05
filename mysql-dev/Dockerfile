@@ -1,11 +1,11 @@
-FROM boomtownroi/base
+FROM boomtownroi/base:16.04
 
 # Add your name if you find yourself here
 MAINTAINER Robert Landers <rlanders@boomtownroi.com>
 
 # Install packages
 RUN apt-get update && \
-  apt-get -yq install cron mysql-server-5.5 pwgen && \
+  apt-get -yq install cron mysql-server pwgen && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/*
 

@@ -1,4 +1,4 @@
-FROM boomtownroi/base
+FROM boomtownroi/base:16.04
 
 # Feel free to add yourself if you edit this file ;)
 MAINTAINER Robert Landers <rlanders@boomtownroi.com>
@@ -12,21 +12,21 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-ADD ["https://dl.bintray.com/mitchellh/consul/${CONSUL_VERSION}_linux_amd64.zip", \
-     "https://dl.bintray.com/mitchellh/consul/${CONSUL_VERSION}_web_ui.zip", "/consul/"]
+ADD ["https://releases.hashicorp.com/consul/${CONSUL_VERSION}/consul_${CONSUL_VERSION}_linux_amd64.zip", \
+     "https://releases.hashicorp.com/consul/${CONSUL_VERSION}/consul_${CONSUL_VERSION}_web_ui.zip", "/consul/"]
 
 RUN cd /consul/ && \
-    unzip ${CONSUL_VERSION}_linux_amd64.zip && \
+    unzip consul_${CONSUL_VERSION}_linux_amd64.zip && \
     chmod +x consul && \
     mv consul /usr/local/bin/consul && \
-    rm ${CONSUL_VERSION}_linux_amd64.zip && \
+    rm consul_${CONSUL_VERSION}_linux_amd64.zip && \
     groupadd -r consul && \
     useradd -r -g consul consul && \
     mkdir -p /data && \
     chown -R consul:consul /data && \
-    unzip ${CONSUL_VERSION}_web_ui.zip && \
+    unzip consul_${CONSUL_VERSION}_web_ui.zip && \
     mv dist /ui && \
-    rm ${CONSUL_VERSION}_web_ui.zip
+    rm consul_${CONSUL_VERSION}_web_ui.zip
 
 ADD root /
 

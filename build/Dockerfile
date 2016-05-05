@@ -1,4 +1,4 @@
-FROM boomtownroi/git
+FROM boomtownroi/git:16.04
 
 # Add your name if you find yourself here
 MAINTAINER Robert Landers <rlanders@boomtownroi.com>
@@ -21,14 +21,14 @@ RUN apt-get update && \
     libfontconfig \
     libssl-dev \
     mysql-client \
-    php5 \
+    php \
     python \
     rsync \
     ssh-client \
     wget \
-    php5-fpm php5-mysql php-apc php5-curl php5-gd \
-    php5-intl php-pear php5-imagick php5-imap php5-mcrypt php5-memcached php5-ming \
-    php5-ps php5-pspell php5-recode php5-sqlite php5-tidy php5-xmlrpc php5-xsl php5-xdebug && \
+    php-fpm php-mysql php-curl php-gd \
+    php-intl php-pear php-imagick php-imap php-mcrypt php-memcached \
+    php-pspell php-recode php-tidy php-xmlrpc php-xsl php-xdebug && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
