@@ -19,5 +19,4 @@ fi
 
 mkdir -p /var/run/fpm
 
-echo "This is really it"
-exec /usr/sbin/php-fpm -F
+exec /usr/sbin/php-fpm7.0 -F
