@@ -60,6 +60,7 @@ RUN npm install -g \
     npm-cache@0.3.7 \
     phantomjs@1.9.18 && \
     ln -s /usr/bin/nodejs /usr/bin/node && \
-    npm config set color false
+    npm config set color false && \
+    echo '{ "allow_root": true }' > /root/.bowerrc
 
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && chmod +x wp-cli.phar && mv wp-cli.phar /bin/wp
