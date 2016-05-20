@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-ENV MEMCACHED_VERSION 1.4.24
+ENV MEMCACHED_VERSION 1.4.25
 ENV MEMCACHED_SHA1 32a798a37ef782da10a09d74aa1e5be91f2861db
 
 RUN buildDeps='curl gcc libc6-dev libevent-dev make perl' \
