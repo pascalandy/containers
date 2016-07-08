@@ -55,6 +55,7 @@ RUN npm install -g \
     coffee-script \
     grunt-cli \
     gulp \
+    webpack \
     karma-cli@0.1.1 \
     argus-eyes \
     npm-cache@0.3.7 \
