@@ -12,6 +12,7 @@ RUN apt-get update && \
     add-apt-repository ppa:pinepain/libv8-5.2 && \
     apt-get update && \
     apt-get install -y libv8-5.2 && \
+    apt-get update && \
     apt-get install -y php-fpm php-mysql php-curl php-gd \
     php-intl php-pear php-imagick php-imap php-mcrypt php-memcached \
     libv8-dev g++ cpp php-dev \
