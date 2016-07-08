@@ -3,9 +3,9 @@ FROM boomtownroi/git
 # Add your name if you find yourself here
 MAINTAINER Robert Landers <rlanders@boomtownroi.com>
 
-ENV NODE_VERSION 5.0.0
+ENV NODE_VERSION 6.3.0
 ENV HUB_VERSION 2.2.1
-ENV NPM_VERSION 3.4.0
+ENV NPM_VERSION 3.10.3
 ENV PHANTOMJS_BIN /usr/local/n/lib/node_modules/phantomjs/lib/phantom/bin/phantomjs
 
 RUN add-apt-repository -y ppa:nginx/stable &2> /dev/null
