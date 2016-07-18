@@ -51,16 +51,14 @@ RUN cd / && \
 # Install node deps
 RUN npm_install=$NPM_VERSION curl -L https://www.npmjs.com/install.sh | npm_install=$NPM_VERSION sh
 RUN npm install -g \
-    bower@1.6.5 \
+    bower@1.7.9 \
     coffee-script \
     grunt-cli \
+    jshint@2.9.2 \
     gulp \
     webpack \
-    karma-cli@0.1.1 \
-    argus-eyes \
-    npm-cache@0.3.7 \
-    phantomjs-prebuilt@2.1.7 \
-    phantomjs@1.9.18 && \
+    karma-cli@1.0.1 \
+    phantomjs-prebuilt@2.1.7 && \
     ln -s /usr/bin/nodejs /usr/bin/node && \
     npm config set color false && \
     echo '{ "allow_root": true }' > /root/.bowerrc
