@@ -59,6 +59,7 @@ RUN npm install -g \
     karma-cli@0.1.1 \
     argus-eyes \
     npm-cache@0.3.7 \
+    phantomjs-prebuilt@2.1.7 && \
     ln -s /usr/bin/nodejs /usr/bin/node && \
     npm config set color false && \
     echo '{ "allow_root": true }' > /root/.bowerrc
