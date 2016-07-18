@@ -5,7 +5,7 @@ MAINTAINER Robert Landers <rlanders@boomtownroi.com>
 
 ENV NODE_VERSION 5.0.0
 ENV HUB_VERSION 2.2.1
-ENV NPM_VERSION 3.4.0
+ENV NPM_VERSION 3.10.5
 ENV PHANTOMJS_BIN /usr/local/n/lib/node_modules/phantomjs/lib/phantom/bin/phantomjs
 
 RUN add-apt-repository -y ppa:nginx/stable &2> /dev/null
@@ -59,6 +59,7 @@ RUN npm install -g \
     karma-cli@0.1.1 \
     argus-eyes \
     npm-cache@0.3.7 \
+    phantomjs-prebuilt@2.1.7 \
     phantomjs@1.9.18 && \
     ln -s /usr/bin/nodejs /usr/bin/node && \
     npm config set color false && \
