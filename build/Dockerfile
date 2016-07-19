@@ -6,7 +6,7 @@ MAINTAINER Robert Landers <rlanders@boomtownroi.com>
 ENV NODE_VERSION 5.0.0
 ENV HUB_VERSION 2.2.1
 ENV NPM_VERSION 3.10.5
-ENV PHANTOMJS_BIN /usr/local/n/lib/node_modules/phantomjs/lib/phantom/bin/phantomjs
+ENV PHANTOMJS_BIN /usr/local/n/lib/node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs
 
 RUN add-apt-repository -y ppa:nginx/stable &2> /dev/null
 
