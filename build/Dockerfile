@@ -50,6 +50,12 @@ RUN cd / && \
 
 # Install node deps
 RUN npm_install=$NPM_VERSION curl -L https://www.npmjs.com/install.sh | npm_install=$NPM_VERSION sh
+
+# See https://github.com/npm/npm/issues/9863#issuecomment-210185190 for the reason this must exist
+RUN cd $(npm root -g)/npm \
+ && npm install fs-extra \
+ && sed -i -e s/graceful-fs/fs-extra/ -e s/fs\.rename/fs.move/ ./lib/utils/rename.js
+
 RUN npm install -g \
     bower@1.7.9 \
     coffee-script \
