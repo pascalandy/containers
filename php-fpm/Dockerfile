@@ -23,6 +23,6 @@ RUN apt-get update && \
 
 ADD root /
 
-RUN phpenmod opcache
+RUN phpenmod opcache && phpdismod xdebug
 
 VOLUME /var/run/fpm/
