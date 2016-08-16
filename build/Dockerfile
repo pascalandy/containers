@@ -62,7 +62,7 @@ RUN npm install -g \
     phantomjs-prebuilt@2.1.7 && \
     ln -s /usr/bin/nodejs /usr/bin/node && \
     npm config set color false && \
-    echo '{ "allow_root": true }' > /root/.bowerrc && \
+    echo '{ "allow_root": true, "interactive": false }' > /root/.bowerrc && \
     npm cache clear # Make sure we clear npm's cache so it won't infest future builds
 
 # See https://github.com/npm/npm/issues/9863#issuecomment-210185190 for the reason this must exist
