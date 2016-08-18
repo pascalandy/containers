@@ -2,6 +2,12 @@
 
 set -x
 
+check() {
+	if [ "$?" != "0" ] ; then
+		exit 1
+	fi
+}
+
 # Install build deps
 apt-get update
 apt-get install -y git python build-essential chrpath
@@ -17,10 +23,14 @@ cd v8
 git checkout 5.4.99
 gclient sync
 
+check
+
 # Build v8
 export GYPFLAGS="-Dv8_use_external_startup_data=0"
 export GYPFLAGS="${GYPFLAGS} -Dlinux_use_bundled_gold=0"
 make native library=shared snapshot=on -j8
+
+check
 
 # Install v8
 mkdir -p /usr/lib /usr/include
@@ -31,7 +41,7 @@ echo -e "create /usr/lib/libv8_libplatform.a\naddlib out/native/obj.target/src/l
 
 # Get v8js
 cd /tmp
-git clone https://github.com/phpv8/v8js.git
+git clone -b 1.3.1 https://github.com/phpv8/v8js.git
 
 # Build v8js
 cd v8js
@@ -39,13 +49,18 @@ phpize
 ./configure
 make
 
+check
+
 # Install v8js
 make install
+
+check
 
 # Clean up
 cd
 rm -rf /tmp/*
 rm -rf /tmp/.*
 apt-get remove -y git python chrpath
+apt-get autoremove -y
 apt-get clean
 rm -rf /var/lib/apt/lists/*
