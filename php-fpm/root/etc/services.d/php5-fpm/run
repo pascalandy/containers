@@ -1,0 +1,30 @@
+#!/usr/bin/with-contenv bash
+
+if [ "$ALLOW_DEBUG" == "true" ] ; then
+
+ if [ "$CONNECT_IP" == "" ] ; then
+  back="1"
+  CONNECT_IP="10.254.254.254"
+ else
+  back="0"
+ fi
+
+ echo "Allowing for debug"
+ cat << EDO >> /etc/php/7.0/fpm/php.ini
+[xdebug]
+zend_extension="/usr/lib/php/20151012/xdebug.so"
+xdebug.remote_enable=1
+xdebug.remote_handler=dbgp
+xdebug.remote_mode=req
+xdebug.remote_connect_back=$back
+xdebug.remote_host=$CONNECT_IP
+xdebug.remote_port=9000
+xdebug.remote_autostart=1
+xdebug.idekey=bonkers
+xdebug.max_nesting_level=300
+EDO
+fi
+
+mkdir -p /var/run/fpm
+
+exec /usr/sbin/php-fpm7.0 -F
