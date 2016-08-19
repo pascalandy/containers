@@ -1,0 +1,9 @@
+{
+  "services": [
+    {
+      "name": "nginx",
+      "tags": ["ops", "frontend"],
+      "port": 80
+    }
+  ]
+}
