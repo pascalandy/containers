@@ -58,6 +58,7 @@ RUN npm install -g \
     jshint@2.9.2 \
     gulp \
     webpack \
+    webpack-dev-server \
     karma-cli@1.0.1 \
     phantomjs-prebuilt@2.1.7 && \
     ln -s /usr/bin/nodejs /usr/bin/node && \
