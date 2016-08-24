@@ -1,4 +1,4 @@
-FROM boomtownroi/git
+FROM boomtownroi/git:phantomize
 
 # Add your name if you find yourself here
 MAINTAINER Robert Landers <rlanders@boomtownroi.com>
