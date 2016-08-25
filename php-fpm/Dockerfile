@@ -16,12 +16,12 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-ADD https://phar.phpunit.de/phpunit-5.5.2.phar
-RUN chmod +x phpunit.phar && mv phpunit.par /usr/local/bin/phpunit
-
 COPY root/build-v8.sh /build-v8.sh
 
 RUN /build-v8.sh
+
+ADD https://phar.phpunit.de/phpunit-5.5.2.phar /usr/local/bin/phpunit
+RUN chmod +x /usr/local/bin/phpunit.phar
 
 COPY root /
 
