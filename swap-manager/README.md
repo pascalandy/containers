@@ -7,7 +7,7 @@ on for the host, when the container exits, it will turn it off.
 ## Running the container
 
 ``` sh
-docker run --privileged -e SWAPSIZE=1 -it boomtownroi/swap-manager:latest
+docker run --privileged -e SWAPSIZE=1 boomtownroi/swap-manager:latest
 ```
 
 Where SWAPSIZE is the number of GB to set aside for swap.
