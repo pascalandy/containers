@@ -25,8 +25,8 @@ RUN apt-get update && \
     python \
     rsync \
     ssh-client \
-    wget \
-    php-fpm php-mysql php-curl php-gd \
+    wget zip \
+    php-fpm php-mysql php-curl php-gd php-mbstring \
     php-intl php-pear php-imagick php-imap php-mcrypt php-memcached \
     php-pspell php-recode php-tidy php-xmlrpc php-xsl php-xdebug && \
     apt-get clean && \
@@ -71,5 +71,7 @@ RUN npm install -g \
 RUN cd $(npm root -g)/npm \
  && npm install fs-extra \
  && sed -i -e s/graceful-fs/fs-extra/ -e s/fs\.rename/fs.move/ ./lib/utils/rename.js
+
+RUN wget https://phar.phpunit.de/phpunit.phar && chmod +x phpunit.phar && mv phpunit.phar /bin/phpunit
 
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && chmod +x wp-cli.phar && mv wp-cli.phar /bin/wp
