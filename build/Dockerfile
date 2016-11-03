@@ -57,7 +57,7 @@ RUN npm install -g \
     grunt-cli \
     jshint@2.9.2 \
     gulp \
-    yarn \
+    yarn@0.16.1 \
     webpack \
     webpack-dev-server \
     karma-cli@1.0.1 \
